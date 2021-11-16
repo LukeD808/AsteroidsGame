@@ -24,8 +24,8 @@ public void keyPressed(){
   if (key == 'v') { //warp
     TheBOX.warp();
   }
-  if (key == 'b') { //breaks
-    TheBOX.breaks();
+  if (key == 'b') { //brakes
+    TheBOX.brakes();
   }
   if (key == 'w' || keyCode == UP) { //accelerate forward
     TheBOX.accelerate(0.1);
