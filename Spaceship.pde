@@ -13,7 +13,7 @@ class Spaceship extends Floater
     myCenterX = (int)(Math.random()*500);
     myCenterY = (int)(Math.random()*500);
   }
-  public void breaks(){
+  public void brakes(){
     myXspeed = 0;
     myYspeed = 0;
   }
