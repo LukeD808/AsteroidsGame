@@ -11,6 +11,6 @@ class Star //note that this class does NOT extend Floater
   public void show() {
     noStroke();
     fill(myColor, Opacity);
-    rect(myX, myY, 5, 5);
+    rect(myX, myY, 4, -4);
   }
 }
