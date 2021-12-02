@@ -3,9 +3,14 @@ class Spaceship extends Floater
   public Spaceship() {
     myColor = 255;
     corners = 4;
-    xCorners = new int[]{-8, -8, 8, 8};
-    yCorners = new int[]{-4, 4, 4, -4};
+    xCorners = new int[]{-4, -4, 4, 4}; //x corners
+    yCorners = new int[]{-4, 4, 4, -4}; //y corners
     //your code here
+  }
+  public void show(){
+    fill(myColor);  
+    stroke(myColor); 
+    super.show();
   }
   public void warp(){
     myXspeed = 0;
@@ -16,5 +21,11 @@ class Spaceship extends Floater
   public void brakes(){
     myXspeed = 0;
     myYspeed = 0;
+  }
+  public double getMyX(){
+    return myCenterX;
+  }
+  public double getMyY(){
+    return myCenterY;
   }
 }
