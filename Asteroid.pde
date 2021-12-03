@@ -10,6 +10,8 @@ class Asteroid extends Floater
     myCenterY = (int)(Math.random()*500);
     myPointDirection = (int)(Math.random()*360);
     rotationSpeed = 0.5;
+    myXspeed = (int)(Math.random()*4)-2;
+    myYspeed = (int)(Math.random()*4)-2;
   }
   public void move(){
     turn(rotationSpeed);
@@ -20,10 +22,10 @@ class Asteroid extends Floater
     noFill();
     super.show();
   }
-  public void getAsteroidCenterX(){
-    
+  public double getAsteroidCenterX(){
+    return myCenterX;
   }
-  public void getAsteroidCenterY(){
-    
+  public double getAsteroidCenterY(){
+    return myCenterY;
   }
 }
