@@ -180,11 +180,11 @@ public void keyPressed(){
   }
   if (key == ' ') {
     TheMissiles.add(new Bullet(TheBOX));
+    
+    /*  The Bullet direction
     if(TheBOX.getPointDirection() > 90){
       TheMissiles.get(TheMissiles.size()-1).setBulletX(+25);
     }
-    /*  The Bullet direction
-    
     if(TheBOX.getPointDirection() > 180 && TheBOX.getPointDirection() < 270){
       TheMissiles.get(TheMissiles.size()-1).setBulletX(-25);
     }
