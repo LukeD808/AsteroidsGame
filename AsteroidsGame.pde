@@ -77,9 +77,9 @@ public void draw()
          somethingHit = true;
       }
     }
-    if (somethingHit == false){
     int nI = 0;
     while (nI < TheMissiles.size()){
+      if (somethingHit == false){
       float dA = dist((float)TheMissiles.get(nI).getBulletX(), (float)TheMissiles.get(nI).getBulletY(),(float)TheAsteroids.get(i).getAsteroidCenterX(),(float)TheAsteroids.get(i).getAsteroidCenterY());
       if (dA < 12){
         TheAsteroids.remove(i);
@@ -93,14 +93,15 @@ public void draw()
         if (HP > 1){
          TheBOXs.remove(0);
          HP--;
+         somethingHit = true;
       }
       else if(HP == 1){
          HP--;
+         somethingHit = true;
       }
       }
-      
+      }
       nI++;
-    }
   }
   somethingHit = false;
   }
