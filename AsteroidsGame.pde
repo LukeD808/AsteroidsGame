@@ -7,6 +7,7 @@ ArrayList <Bullet> TheMissiles;
 ArrayList <FollowerShips> TheBOXs;
 int HP = 9;
 boolean pressable = true;
+boolean somethingHit = false;
 
 public void setup() 
 {
@@ -68,11 +69,15 @@ public void draw()
       if (HP > 1){
          TheBOXs.remove(0);
          HP--;
+         somethingHit = true;
+         
       }
       else if(HP == 1){
          HP--;
+         somethingHit = true;
       }
     }
+    if (somethingHit == false){
     int nI = 0;
     while (nI < TheMissiles.size()){
       float dA = dist((float)TheMissiles.get(nI).getBulletX(), (float)TheMissiles.get(nI).getBulletY(),(float)TheAsteroids.get(i).getAsteroidCenterX(),(float)TheAsteroids.get(i).getAsteroidCenterY());
@@ -96,6 +101,8 @@ public void draw()
       */
       nI++;
     }
+  }
+  somethingHit = false;
   }
   for (int i = 0; i < TheBOXs.size(); i++){
     //TheBOXs[i].move();
@@ -173,10 +180,11 @@ public void keyPressed(){
   }
   if (key == ' ') {
     TheMissiles.add(new Bullet(TheBOX));
-    /*  The Bullet direction
-    if(TheBOX.getPointDirection() < 180 && TheBOX.getPointDirection() > 270){
+    if(TheBOX.getPointDirection() > 90){
       TheMissiles.get(TheMissiles.size()-1).setBulletX(+25);
     }
+    /*  The Bullet direction
+    
     if(TheBOX.getPointDirection() > 180 && TheBOX.getPointDirection() < 270){
       TheMissiles.get(TheMissiles.size()-1).setBulletX(-25);
     }
