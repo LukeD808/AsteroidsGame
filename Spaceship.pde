@@ -5,6 +5,8 @@ class Spaceship extends Floater
     corners = 4;
     xCorners = new int[]{-4, -4, 4, 4}; //x corners
     yCorners = new int[]{-4, 4, 4, -4}; //y corners
+    myCenterX = (int)(Math.random()*500);
+    myCenterY = (int)(Math.random()*500);
     //your code here
   }
   public void show(){
@@ -27,5 +29,11 @@ class Spaceship extends Floater
   }
   public double getMyY(){
     return myCenterY;
+  }
+  public double getPointDirection(){
+    return myPointDirection;
+  }
+  public void hideShip(){
+    corners = 0;
   }
 }
