@@ -12,6 +12,12 @@ class Spaceship extends Floater
   public void show(){
     fill(myColor);  
     stroke(myColor); 
+    if (myPointDirection == 360){
+      myPointDirection = 0;
+    }
+    else if (myPointDirection < 0){
+      myPointDirection = 355;
+    }
     super.show();
   }
   public void warp(){
