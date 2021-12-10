@@ -16,7 +16,10 @@ class Bullet extends Floater
   public double getBulletY(){
     return myCenterY;
   }
-  public void setBulletX(double sl){
-    myCenterX += sl;
+  public void setBulletX(double sX){
+    myCenterX += sX;
+  }
+  public void setBulletY(double sY){
+    myCenterY += sY;
   }
 }

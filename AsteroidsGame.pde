@@ -86,9 +86,9 @@ public void draw()
         TheMissiles.remove(nI);
         nI = TheMissiles.size()-1;
       }
-      /*
+      
       float dB = dist((float)TheMissiles.get(nI).getBulletX(), (float)TheMissiles.get(nI).getBulletY(),(float)TheBOX.getMyX(),(float)TheBOX.getMyY());
-      if (dB < 24){
+      if (dB < 20){
         TheMissiles.remove(nI);
         if (HP > 1){
          TheBOXs.remove(0);
@@ -98,7 +98,7 @@ public void draw()
          HP--;
       }
       }
-      */
+      
       nI++;
     }
   }
@@ -180,15 +180,20 @@ public void keyPressed(){
   }
   if (key == ' ') {
     TheMissiles.add(new Bullet(TheBOX));
-    
-    /*  The Bullet direction
-    if(TheBOX.getPointDirection() > 90){
-      TheMissiles.get(TheMissiles.size()-1).setBulletX(+25);
+    //The Bullet direction
+    if(TheBOX.getPointDirection() <= 45 || TheBOX.getPointDirection() >= 315){
+      TheMissiles.get(TheMissiles.size()-1).setBulletX(+20);
     }
-    if(TheBOX.getPointDirection() > 180 && TheBOX.getPointDirection() < 270){
-      TheMissiles.get(TheMissiles.size()-1).setBulletX(-25);
+    if(TheBOX.getPointDirection() >= 135 && TheBOX.getPointDirection() <= 225){
+      TheMissiles.get(TheMissiles.size()-1).setBulletX(-20);
     }
-    */
+    if(TheBOX.getPointDirection() >= 45 && TheBOX.getPointDirection() <= 135){
+      TheMissiles.get(TheMissiles.size()-1).setBulletY(+20);
+    }
+    if(TheBOX.getPointDirection() >= 225 && TheBOX.getPointDirection() <=  315){
+      TheMissiles.get(TheMissiles.size()-1).setBulletY(-20);
+    }
+   //System.out.println(TheBOX.getPointDirection());
   }
   }
 }
